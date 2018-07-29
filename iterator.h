@@ -1,55 +1,77 @@
-//
-// Created by mark on 16-12-19.
-//
+/**
+ * @author liangshaocong1994@gmail.com
+ * @date 2018-07-29
+ */
+#ifndef FRESHSTL_ITERATOR_H
+#define FRESHSTL_ITERATOR_H
 
-#ifndef STL_ITERATOR_H
-#define STL_ITERATOR_H
-#include <stddef.h>
-namespace sctoys {
-struct input_iterator_tag {};
-struct output_iterator_tag {};
-struct forward_iterator_tag : public input_iterator_tag {};
-struct bidirectional_iterator_tag : public forward_iterator_tag {};
-struct random_access_iterator_tag : public bidirectional_iterator_tag {};
+#include <cstddef>
+namespace sctoys
+{
+struct InputIteratorTag
+{
+};
+struct OutputIteratorTag
+{
+};
+struct ForwardIteratorTag : public InputIteratorTag
+{
+};
+struct BidirectionalIteratorTag : public ForwardIteratorTag
+{
+};
+struct RandomAccessIteratorTag : public BidirectionalIteratorTag
+{
+};
 template <typename Category, typename T, typename Difference = ptrdiff_t,
           typename Pointer = T *, typename Refernce = T &>
-struct Iterator {
-  typedef Category IteratorCategory;
-  typedef T ValueType;
-  typedef Difference DifferenceType;
-  typedef Pointer PointerType;
-  typedef Refernce ReferenceType;
+struct Iterator
+{
+    typedef Category IteratorCategory;
+    typedef T ValueType;
+    typedef Difference DistanceType;
+    typedef Pointer PointerType;
+    typedef Refernce ReferenceType;
 };
 
-template <typename Iterator> struct iterator_traits {
-  typedef typename Iterator::iterator_category iterator_category;
-  typedef typename Iterator::value_type value_type;
-  typedef typename Iterator::difference_type difference_type;
-  typedef typename Iterator::pointer pointer;
-  typedef typename Iterator::reference reference;
+template <typename Iterator>
+struct IteratorTraits
+{
+    typedef typename Iterator::IteratorCategory IteratorCategory;
+    typedef typename Iterator::ValueType ValueType;
+    typedef typename Iterator::DistanceType DistanceType;
+    typedef typename Iterator::PointerType PointerType;
+    typedef typename Iterator::ReferenceType ReferenceType;
 };
-template <typename T> struct iterator_traits<T *> {
-  typedef random_access_iterator_tag iterator_category;
-  typedef T value_type;
-  typedef ptrdiff_t difference_type;
-  typedef T *pointer;
-  typedef T &reference;
+template <typename T>
+struct IteratorTraits<T *>
+{
+    typedef RandomAccessIteratorTag IteratorCategory;
+    typedef T ValueType;
+    typedef ptrdiff_t DistanceType;
+    typedef T *pointer;
+    typedef T &reference;
 };
+
 template <typename Iterator, typename Distance>
-void __advance(Iterator &it, Distance n, const input_iterator_tag &iiter) {
-  while (n--) {
-    it++;
-  }
+void __advance(Iterator &it, Distance n, const InputIteratorTag &iiter)
+{
+    while (n--)
+    {
+        it++;
+    }
 }
 
 template <typename Iterator, typename Distance>
-void __advance(Iterator &it, Distance n,
-               const random_access_iterator_tag &riter) {
-  it += n;
+void __advance(Iterator &it, Distance n, const RandomAccessIteratorTag &riter)
+{
+    it += n;
 }
+
 template <typename Iterator, typename Distance>
-void advance(Iterator &it, Distance n) {
-  __advance(it, n, iterator_traits<Iterator>::iterator_category);
+void advance(Iterator &it, Distance n)
+{
+    __advance(it, n, IteratorTraits<Iterator>::IteratorCategory);
 }
 } // namespace sctoys
 #endif // MY_PRINTF_ITERATOR_H
