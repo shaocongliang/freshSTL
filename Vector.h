@@ -1,17 +1,19 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 #include <cstddef>
-#include "Iterator.h"
+#include <Iterator.h>
+
 namespace sctoys
 {
 template <typename T>
 class Vector
 {
   public:
-    typedef T *iterator;
+    typedef T *Iterator;
+    typedef const T *ConstIterator;
     Vector() : data_(nullptr), size_(0), capacity_(0) {}
-    iterator Begin() const { return data_; }
-    iterator End() const { return data_ + size_; }
+    Iterator Begin() const { return data_; }
+    Iterator End() const { return data_ + size_; }
     void PushBack(const T &val)
     {
         if (size_ >= capacity_)
