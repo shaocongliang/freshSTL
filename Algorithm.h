@@ -1,6 +1,7 @@
 #ifndef ALGORITHM_H
 #define ALGORITHM_H
-#include "Iterator.h"
+
+#include <IteratorTypes.h>
 namespace sctoys{
     template <typename InputIter, typename OutputIter>
     OutputIter copy(InputIter first, InputIter last, OutputIter d_first) {

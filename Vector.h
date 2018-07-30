@@ -2,6 +2,8 @@
 #define VECTOR_H
 #include <cstddef>
 #include <Iterator.h>
+#include <IteratorTypes.h>
+#include "Iterator.h"
 
 namespace sctoys
 {
@@ -9,18 +11,20 @@ template <typename T>
 class Vector
 {
   public:
-    typedef T *Iterator;
-    typedef const T *ConstIterator;
-    Vector() : data_(nullptr), size_(0), capacity_(0) {}
-    Iterator Begin() const { return data_; }
-    Iterator End() const { return data_ + size_; }
+    typedef T* Pointer;
+    typedef NormalIterator<Pointer, Vector> Iterator;
+    Vector() : cur_(nullptr), size_(0), capacity_(0) {}
+    Iterator Begin() const noexcept {
+        return Iterator(this->cur_);
+    }
+    Iterator End() const noexcept { return cur_ + size_; }
     void PushBack(const T &val)
     {
         if (size_ >= capacity_)
         {
             Alloc(size_ * 2);
         }
-        data_[size_++] = val;
+        cur_[size_++] = val;
     }
     std::size_t Size() { return size_; }
 
@@ -30,13 +34,13 @@ class Vector
         T *p = new T[n];
         for (std::size_t i = 0; i < size_; ++i)
         {
-            p[i] = data_[i];
+            p[i] = cur_[i];
         }
-        delete data_;
-        data_ = p;
+        delete cur_;
+        cur_ = p;
         capacity_ = n;
     }
-    T *data_;
+    Pointer cur_;
     std::size_t size_;
     std::size_t capacity_;
 };

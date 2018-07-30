@@ -3254,7 +3254,7 @@ class CartesianProductGenerator2
     void operator=(const Iterator& other);
 
     const ParamGeneratorInterface<ParamType>* const base_;
-    // begin[i]_ and end[i]_ define the i-th range that Iterator traverses.
+    // begin[i]_ and end[i]_ define the i-th range that IteratorTypes traverses.
     // current[i]_ is the actual traversing iterator.
     const typename ParamGenerator<T1>::iterator begin1_;
     const typename ParamGenerator<T1>::iterator end1_;
@@ -3263,7 +3263,7 @@ class CartesianProductGenerator2
     const typename ParamGenerator<T2>::iterator end2_;
     typename ParamGenerator<T2>::iterator current2_;
     ParamType current_value_;
-  };  // class CartesianProductGenerator2::Iterator
+  };  // class CartesianProductGenerator2::IteratorTypes
 
   // No implementation - assignment is unsupported.
   void operator=(const CartesianProductGenerator2& other);
@@ -3382,7 +3382,7 @@ class CartesianProductGenerator3
     void operator=(const Iterator& other);
 
     const ParamGeneratorInterface<ParamType>* const base_;
-    // begin[i]_ and end[i]_ define the i-th range that Iterator traverses.
+    // begin[i]_ and end[i]_ define the i-th range that IteratorTypes traverses.
     // current[i]_ is the actual traversing iterator.
     const typename ParamGenerator<T1>::iterator begin1_;
     const typename ParamGenerator<T1>::iterator end1_;
@@ -3394,7 +3394,7 @@ class CartesianProductGenerator3
     const typename ParamGenerator<T3>::iterator end3_;
     typename ParamGenerator<T3>::iterator current3_;
     ParamType current_value_;
-  };  // class CartesianProductGenerator3::Iterator
+  };  // class CartesianProductGenerator3::IteratorTypes
 
   // No implementation - assignment is unsupported.
   void operator=(const CartesianProductGenerator3& other);
@@ -3529,7 +3529,7 @@ class CartesianProductGenerator4
     void operator=(const Iterator& other);
 
     const ParamGeneratorInterface<ParamType>* const base_;
-    // begin[i]_ and end[i]_ define the i-th range that Iterator traverses.
+    // begin[i]_ and end[i]_ define the i-th range that IteratorTypes traverses.
     // current[i]_ is the actual traversing iterator.
     const typename ParamGenerator<T1>::iterator begin1_;
     const typename ParamGenerator<T1>::iterator end1_;
@@ -3544,7 +3544,7 @@ class CartesianProductGenerator4
     const typename ParamGenerator<T4>::iterator end4_;
     typename ParamGenerator<T4>::iterator current4_;
     ParamType current_value_;
-  };  // class CartesianProductGenerator4::Iterator
+  };  // class CartesianProductGenerator4::IteratorTypes
 
   // No implementation - assignment is unsupported.
   void operator=(const CartesianProductGenerator4& other);
@@ -3692,7 +3692,7 @@ class CartesianProductGenerator5
     void operator=(const Iterator& other);
 
     const ParamGeneratorInterface<ParamType>* const base_;
-    // begin[i]_ and end[i]_ define the i-th range that Iterator traverses.
+    // begin[i]_ and end[i]_ define the i-th range that IteratorTypes traverses.
     // current[i]_ is the actual traversing iterator.
     const typename ParamGenerator<T1>::iterator begin1_;
     const typename ParamGenerator<T1>::iterator end1_;
@@ -3710,7 +3710,7 @@ class CartesianProductGenerator5
     const typename ParamGenerator<T5>::iterator end5_;
     typename ParamGenerator<T5>::iterator current5_;
     ParamType current_value_;
-  };  // class CartesianProductGenerator5::Iterator
+  };  // class CartesianProductGenerator5::IteratorTypes
 
   // No implementation - assignment is unsupported.
   void operator=(const CartesianProductGenerator5& other);
@@ -3874,7 +3874,7 @@ class CartesianProductGenerator6
     void operator=(const Iterator& other);
 
     const ParamGeneratorInterface<ParamType>* const base_;
-    // begin[i]_ and end[i]_ define the i-th range that Iterator traverses.
+    // begin[i]_ and end[i]_ define the i-th range that IteratorTypes traverses.
     // current[i]_ is the actual traversing iterator.
     const typename ParamGenerator<T1>::iterator begin1_;
     const typename ParamGenerator<T1>::iterator end1_;
@@ -3895,7 +3895,7 @@ class CartesianProductGenerator6
     const typename ParamGenerator<T6>::iterator end6_;
     typename ParamGenerator<T6>::iterator current6_;
     ParamType current_value_;
-  };  // class CartesianProductGenerator6::Iterator
+  };  // class CartesianProductGenerator6::IteratorTypes
 
   // No implementation - assignment is unsupported.
   void operator=(const CartesianProductGenerator6& other);
@@ -4073,7 +4073,7 @@ class CartesianProductGenerator7
     void operator=(const Iterator& other);
 
     const ParamGeneratorInterface<ParamType>* const base_;
-    // begin[i]_ and end[i]_ define the i-th range that Iterator traverses.
+    // begin[i]_ and end[i]_ define the i-th range that IteratorTypes traverses.
     // current[i]_ is the actual traversing iterator.
     const typename ParamGenerator<T1>::iterator begin1_;
     const typename ParamGenerator<T1>::iterator end1_;
@@ -4097,7 +4097,7 @@ class CartesianProductGenerator7
     const typename ParamGenerator<T7>::iterator end7_;
     typename ParamGenerator<T7>::iterator current7_;
     ParamType current_value_;
-  };  // class CartesianProductGenerator7::Iterator
+  };  // class CartesianProductGenerator7::IteratorTypes
 
   // No implementation - assignment is unsupported.
   void operator=(const CartesianProductGenerator7& other);
@@ -4291,7 +4291,7 @@ class CartesianProductGenerator8
     void operator=(const Iterator& other);
 
     const ParamGeneratorInterface<ParamType>* const base_;
-    // begin[i]_ and end[i]_ define the i-th range that Iterator traverses.
+    // begin[i]_ and end[i]_ define the i-th range that IteratorTypes traverses.
     // current[i]_ is the actual traversing iterator.
     const typename ParamGenerator<T1>::iterator begin1_;
     const typename ParamGenerator<T1>::iterator end1_;
@@ -4318,7 +4318,7 @@ class CartesianProductGenerator8
     const typename ParamGenerator<T8>::iterator end8_;
     typename ParamGenerator<T8>::iterator current8_;
     ParamType current_value_;
-  };  // class CartesianProductGenerator8::Iterator
+  };  // class CartesianProductGenerator8::IteratorTypes
 
   // No implementation - assignment is unsupported.
   void operator=(const CartesianProductGenerator8& other);
@@ -4526,7 +4526,7 @@ class CartesianProductGenerator9
     void operator=(const Iterator& other);
 
     const ParamGeneratorInterface<ParamType>* const base_;
-    // begin[i]_ and end[i]_ define the i-th range that Iterator traverses.
+    // begin[i]_ and end[i]_ define the i-th range that IteratorTypes traverses.
     // current[i]_ is the actual traversing iterator.
     const typename ParamGenerator<T1>::iterator begin1_;
     const typename ParamGenerator<T1>::iterator end1_;
@@ -4556,7 +4556,7 @@ class CartesianProductGenerator9
     const typename ParamGenerator<T9>::iterator end9_;
     typename ParamGenerator<T9>::iterator current9_;
     ParamType current_value_;
-  };  // class CartesianProductGenerator9::Iterator
+  };  // class CartesianProductGenerator9::IteratorTypes
 
   // No implementation - assignment is unsupported.
   void operator=(const CartesianProductGenerator9& other);
@@ -4778,7 +4778,7 @@ class CartesianProductGenerator10
     void operator=(const Iterator& other);
 
     const ParamGeneratorInterface<ParamType>* const base_;
-    // begin[i]_ and end[i]_ define the i-th range that Iterator traverses.
+    // begin[i]_ and end[i]_ define the i-th range that IteratorTypes traverses.
     // current[i]_ is the actual traversing iterator.
     const typename ParamGenerator<T1>::iterator begin1_;
     const typename ParamGenerator<T1>::iterator end1_;
@@ -4811,7 +4811,7 @@ class CartesianProductGenerator10
     const typename ParamGenerator<T10>::iterator end10_;
     typename ParamGenerator<T10>::iterator current10_;
     ParamType current_value_;
-  };  // class CartesianProductGenerator10::Iterator
+  };  // class CartesianProductGenerator10::IteratorTypes
 
   // No implementation - assignment is unsupported.
   void operator=(const CartesianProductGenerator10& other);

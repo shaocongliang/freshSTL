@@ -1,57 +1,36 @@
-/**
- * @author liangshaocong1994@gmail.com
- * @date 2018-07-29
- */
+//
+// Created by 少聪 on 2018/7/30.
+//
+
 #ifndef FRESHSTL_ITERATOR_H
 #define FRESHSTL_ITERATOR_H
-#include <stddef.h>
+
+#include <IteratorTypes.h>
+
 namespace sctoys {
-struct InputIteratorTag {};
-struct OutputIteratorTag {};
-struct ForwardIteratorTag : public InputIteratorTag {};
-struct BidirectionalIteratorTag : public ForwardIteratorTag {};
-struct RandomAccessIteratorTag : public BidirectionalIteratorTag {};
-template <typename Category, typename T, typename Difference = ptrdiff_t,
-          typename Pointer = T *, typename Refernce = T &>
-struct Iterator {
-  typedef Category IteratorCategory;
-  typedef T ValueType;
-  typedef Difference DistanceType;
-  typedef Pointer PointerType;
-  typedef Refernce ReferenceType;
-};
+    template<typename Iterator, typename Container>
+    class NormalIterator {
+    private:
+        Iterator cur_;
+    public:
+        typedef IteratorTraits <Iterator> TraitsType;
+        typedef typename TraitsType::ValueType ValueType;
+        typedef typename TraitsType::IteratorCategory IteratorCategory;
+        typedef typename TraitsType::DistanceType DistanceType;
+        typedef typename TraitsType::PointerType PointerType;
+        typedef typename TraitsType::ReferenceType ReferenceType;
 
-template <typename Iterator>
-struct IteratorTraits {
-  typedef typename Iterator::IteratorCategory IteratorCategory;
-  typedef typename Iterator::ValueType ValueType;
-  typedef typename Iterator::DistanceType DistanceType;
-  typedef typename Iterator::PointerType PointerType;
-  typedef typename Iterator::ReferenceType ReferenceType;
-};
-template <typename T>
-struct IteratorTraits<T *> {
-  typedef RandomAccessIteratorTag IteratorCategory;
-  typedef T ValueType;
-  typedef ptrdiff_t DistanceType;
-  typedef T *PointerType;
-  typedef T &ReferenceType;
-};
-template <typename Iterator, typename Distance>
-void __advance(Iterator &it, Distance n, const InputIteratorTag &iiter) {
-  while (n--) {
-    it++;
-  }
-}
+        ValueType operator*() {
+            return *cur_;
+        }
 
-template <typename Iterator, typename Distance>
-void __advance(Iterator &it, Distance n, const RandomAccessIteratorTag &riter) {
-  it += n;
-}
+        explicit NormalIterator(Iterator iter) :
+                cur_(iter) {}
 
-template <typename Iterator, typename Distance>
-void advance(Iterator &it, Distance n) {
-  __advance(it, n, IteratorTraits<Iterator>::IteratorCategory());
+        NormalIterator &operator+=(const DistanceType &n) {
+            cur_ += n;
+            return *this;
+        }
+    };
 }
-}  // namespace sctoys
-#endif
+#endif //FRESHSTL_ITERATOR_H

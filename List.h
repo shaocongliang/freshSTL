@@ -10,6 +10,8 @@ namespace sctoys
     };
 class List
 {
+public:
+    typedef Node ValueType_;
 };
 } // namespace sctoys
 #endif

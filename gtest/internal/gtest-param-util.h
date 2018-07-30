@@ -261,7 +261,7 @@ class RangeGenerator : public ParamGeneratorInterface<T> {
     T value_;
     int index_;
     const IncrementT step_;
-  };  // class RangeGenerator::Iterator
+  };  // class RangeGenerator::IteratorTypes
 
   static int CalculateEndIndex(const T& begin,
                                const T& end,
@@ -361,7 +361,7 @@ class ValuesInIteratorRangeGenerator : public ParamGeneratorInterface<T> {
     // Use of scoped_ptr helps manage cached value's lifetime,
     // which is bound by the lifespan of the iterator itself.
     mutable scoped_ptr<const T> value_;
-  };  // class ValuesInIteratorRangeGenerator::Iterator
+  };  // class ValuesInIteratorRangeGenerator::IteratorTypes
 
   // No implementation - assignment is unsupported.
   void operator=(const ValuesInIteratorRangeGenerator& other);

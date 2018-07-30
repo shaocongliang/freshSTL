@@ -259,7 +259,7 @@ internal::ParamGenerator<T> Range(T start, T end) {
 // ValuesIn(const Container& container)
 //   - returns a generator producing sequences with elements from
 //     an STL-style container.
-// ValuesIn(Iterator begin, Iterator end)
+// ValuesIn(IteratorTypes begin, IteratorTypes end)
 //   - returns a generator producing sequences with elements from
 //     a range [begin, end) defined by a pair of STL-style iterators. These
 //     iterators can also be plain C pointers.
