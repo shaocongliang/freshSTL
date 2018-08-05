@@ -5,9 +5,9 @@
 #ifndef FRESHSTL_ITERATOR_H
 #define FRESHSTL_ITERATOR_H
 
-#include <IteratorTypes.h>
+#include <FIteratorTypes.h>
 
-namespace sctoys {
+namespace shaocong {
     template<typename Iterator, typename Container>
     class NormalIterator {
     private:
@@ -31,6 +31,7 @@ namespace sctoys {
             cur_ += n;
             return *this;
         }
+
     };
 }
 #endif //FRESHSTL_ITERATOR_H

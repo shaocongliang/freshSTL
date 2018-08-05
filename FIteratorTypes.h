@@ -5,7 +5,7 @@
 #ifndef FRESHSTL_ITERATOR_TYPES_H
 #define FRESHSTL_ITERATOR_TYPES_H
 #include <stddef.h>
-namespace sctoys {
+namespace shaocong {
 struct InputIteratorTag {};
 struct OutputIteratorTag {};
 struct ForwardIteratorTag : public InputIteratorTag {};

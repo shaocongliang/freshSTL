@@ -1,6 +1,6 @@
 #ifndef LIST_H
 #define LIST_H
-namespace sctoys
+namespace shaocong
 {
     template <typename T>
     struct Node{
@@ -8,7 +8,7 @@ namespace sctoys
         Node *next_;
         Node *prev_;
     };
-class List
+class FList
 {
 public:
     typedef Node ValueType_;
