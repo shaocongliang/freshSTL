@@ -4,10 +4,13 @@
 using namespace shaocong;
 TEST(IteratorTest, vectorTest){
     FVector<int> v;
+    EXPECT_EQ(v.Begin() == v.End(), true);
     v.PushBack(1);v.PushBack(2);v.PushBack(3);v.PushBack(4);
-    FVector<int>::Iterator i = v.Begin();
-    advance(i, 3);
-    EXPECT_EQ(*i, 4);
+//    EXPECT_EQ(v.Begin() == v.End(), false);
+    FVector<int>::Iterator iter = v.Begin();
+    EXPECT_EQ(1, *iter);
+    advance(iter, 3);
+    EXPECT_EQ(*iter, 4);
 }
 
 TEST(CapacitTest, vectorTest) {

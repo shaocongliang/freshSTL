@@ -20,6 +20,8 @@ namespace shaocong {
         typedef typename TraitsType::PointerType PointerType;
         typedef typename TraitsType::ReferenceType ReferenceType;
 
+        friend bool operator ==(const NormalIterator &lhs, const NormalIterator &rhs);
+
         ValueType operator*() {
             return *cur_;
         }
@@ -31,7 +33,10 @@ namespace shaocong {
             cur_ += n;
             return *this;
         }
-
     };
+    template <typename T, typename Container>
+    bool operator ==(const NormalIterator<T, Container> &lhs, const NormalIterator<T, Container> &rhs) {
+        return lhs.cur_ == rhs.cur_;
+    }
 }
 #endif //FRESHSTL_ITERATOR_H

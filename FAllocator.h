@@ -10,7 +10,7 @@
 namespace shaocong{
     template <typename T>
     T* Allocate(std::size_t n) {
-       return static_cast<T*>(malloc(sizeof(T)*n));
+       return static_cast<T*>(malloc(n));
     }
     template <typename T>
     void Deallocate(T *hint) {
